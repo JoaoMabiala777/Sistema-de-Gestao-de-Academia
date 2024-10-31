@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Avaliacao" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfa23635-1ac5-49b0-8224-a6e0b2445c46">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="57"/>
+	<property name="ireport.y" value="28"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select* from tbavaliacao where id = $P{id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Peso" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Altura" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Idade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nivel_Colesterol" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pressao_Arterial" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="145" height="95" uuid="3b55b2af-b5ab-49ef-bddd-e64281f86a45"/>
+				<imageExpression><![CDATA["/home/mabiala/Programas/JAVA/Icon.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="174" y="22" width="225" height="50" uuid="185eb69f-3e22-453e-8d2b-b292a6df0831"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AVALIAÇÃO DO ALUNO]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="349" y="87" width="206" height="20" uuid="1fae89b2-1bf5-4595-bb9d-ee8798779bb4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="57" height="20" uuid="a49d19fb-1a66-4f58-8368-a9130c860ee7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="10" width="74" height="20" uuid="fb871421-cdc3-4cfe-84bf-b95b95d6abc1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="193" y="10" width="75" height="20" uuid="adc54f86-2acd-42c1-9253-969dd7dea2c4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="10" width="64" height="20" uuid="1d0d6e53-0698-4f05-9a1d-627077c316f0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Idade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="10" width="60" height="20" uuid="bcab4820-4124-4c9e-b5c8-8f1fe62eecb8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="7" width="57" height="20" uuid="51d81e6c-8ddc-4c03-bf18-6665dc82772e"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="73" width="296" height="20" uuid="1df25263-da9c-4ebc-9b71-4698aba722ea"/>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="7" width="74" height="20" uuid="a4c7f113-bdd9-48c4-bee3-dfda1136d87a"/>
+				<textFieldExpression><![CDATA[$F{Peso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="7" width="75" height="20" uuid="333c21a1-4cc3-4ed5-90c7-bb03372e5cb7"/>
+				<textFieldExpression><![CDATA[$F{Altura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="7" width="64" height="20" uuid="d9152d49-7d7f-4e0b-acb6-42ddd76169b1"/>
+				<textFieldExpression><![CDATA[$F{Idade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="7" width="102" height="20" uuid="c1b6165c-8c0d-4f60-8bf2-3c7f5bb3ecc8"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="42" width="100" height="20" uuid="d66cbf16-f371-4774-a63c-dd4899f81b8f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="314" y="73" width="100" height="20" uuid="ee4d12bb-31ce-4ee5-a00c-0918d956e136"/>
+				<textFieldExpression><![CDATA[$F{Nivel_Colesterol}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="314" y="42" width="120" height="20" uuid="bb30a645-52c8-4dc3-ac74-cd6effeee20d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nivel De Colesterol]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="73" width="100" height="20" uuid="dc32552d-dda7-4d21-ac73-5b96c6c24c45"/>
+				<textFieldExpression><![CDATA[$F{Pressao_Arterial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="434" y="42" width="100" height="20" uuid="5649d392-824a-48e3-aa97-60408672e3c5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pressao Arterial]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="399" y="25" width="100" height="20" uuid="28a406b5-833a-4837-b2a5-8bdd89601529"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

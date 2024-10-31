@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Matricula1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a3823db-b5c3-454f-acc1-6693e2b85bb5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="27"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select* from tbmatricula where id=$P{id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dat_Matricula" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Excercicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PrecoModalidade" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PlanoPagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="187" y="12" width="130" height="38" uuid="d6ccab9e-1446-47a0-a848-c251f46f2156"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATRICULA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="1" width="155" height="84" uuid="d6603a51-bfe2-45fb-8be9-d3acc24bf246"/>
+				<imageExpression><![CDATA["/home/mabiala/Programas/JAVA/Icon.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="339" y="12" width="100" height="20" uuid="6a73e497-6bdc-4467-a68a-3102a1bb911c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Matricula:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="32" width="144" height="20" uuid="d6e515d7-8dd9-462e-8948-c113dc7d7852"/>
+				<textFieldExpression><![CDATA[$F{Dat_Matricula}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="8" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="25" height="20" uuid="1395fbc2-e4f8-450c-ae92-ce755844a758"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="7" width="100" height="20" uuid="d0ce0efd-0fa7-4fa8-b249-5ce20f0d6b9a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="7" width="100" height="20" uuid="40252078-e0c8-4d1d-a933-3687638eed51"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Excercicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="7" width="96" height="20" uuid="7c8a6d4e-9368-45f3-8fb3-9607fb382171"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preço do Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="7" width="115" height="20" uuid="d75f524b-ccac-4b25-ab01-fc0d5bd547ad"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plano de Pagamento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="89" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="13" width="44" height="20" uuid="3fdcd13f-266c-4c37-9f91-929127c7eaa5"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="53" width="439" height="20" uuid="f1642b6d-2811-4912-8e2c-4880c2ac3c18"/>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="13" width="100" height="20" uuid="eca7cf67-d15e-47d9-9020-c61bb400eb5f"/>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="13" width="120" height="20" uuid="eb0702d1-2a48-4209-a3d1-ce49c38b9e79"/>
+				<textFieldExpression><![CDATA[$F{Excercicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="317" y="13" width="96" height="20" uuid="10db72ce-e137-47c5-86d5-e39ad9896c24"/>
+				<textFieldExpression><![CDATA[$F{PrecoModalidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="13" width="88" height="20" uuid="5dfc901c-5930-40bf-9375-57fae4c16136"/>
+				<textFieldExpression><![CDATA[$F{PlanoPagamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="33" width="80" height="20" uuid="6f94300e-f040-46fa-b813-32606f8ab722"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="411" y="15" width="100" height="20" uuid="e0d3e5d6-5648-4cf2-a6fd-2bc4a72077b5"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="0" y="15" width="162" height="20" uuid="f8cbf156-6169-4279-b661-3ae8e91f1c8d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
